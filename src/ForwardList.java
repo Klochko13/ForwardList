@@ -50,11 +50,30 @@ public class ForwardList {
             Temp = Temp.getNext();
 
         }
-//        Element New = new Element(Data);
-//        New.setNext(Temp.getNext());
-//        Temp.setNext(New);
-        Temp.setNext(new Element(Data,Temp.getNext()));
+       Element New = new Element(Data);
+       New.setNext(Temp.getNext());
+       Temp.setNext(New);
+      // Temp.setNext(new Element(Data,Temp.getNext()));
         size ++;
+    }
+    void erase (int Index){
+        Element Temp = Head;
+        if (Index == 0) {
+            Head = Temp.getNext();
+            return;
+        }
+        if (Index >= size) return;
+
+        for (int i = 0; i < Index - 1; i++) {
+            Temp = Temp.getNext();
+        }
+        Temp.setNext(Temp.getNext().getNext());
+        size --;
+    }
+
+    void clear (){
+        Head = null;
+        System.out.println("Список удален");
     }
 
     public void print (){
