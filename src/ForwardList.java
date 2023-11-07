@@ -1,18 +1,25 @@
 public class ForwardList {
     Element Head;
     int size;
-    public  ForwardList(){
+    public ForwardList(){
         this.Head = null;
         size = 0;
         System.out.println("Lconstructor: " + Integer.toHexString(this.hashCode()));
     }
+    public ForwardList (ForwardList other) {
+        this.Head = other.Head;
+        this.size = other.size;
+        System.out.println("CopyConstructor" + Integer.toHexString(hashCode()));
+    }
+
     public void push_front(int Data){
-       /* Element New = new Element(Data);
+        Element New = new Element(Data);
         New.setNext(Head);
-        Head = New;*/
-        Head = new Element(Data, Head);
+        Head = New;
+       // Head = new Element(Data, Head);
         size ++;
     }
+
     public void push_back (int Data){
         if (Head == null){
             push_front(Data);
@@ -69,6 +76,23 @@ public class ForwardList {
         }
         Temp.setNext(Temp.getNext().getNext());
         size --;
+    }
+    void revers (ForwardList list){
+        Element Temp = Head;
+
+            for (int i = 0; i < size-1; i++) {
+
+                while (Temp.getNext() !=null) {
+                for (int j = 0; j < size-1; j++) {
+                    Temp = Temp.getNext();
+
+                }
+                }
+
+                Head = new Element(Temp.getData());
+
+        }
+
     }
 
     void clear (){

@@ -27,7 +27,10 @@ public class Main {
         int index_del = kb.nextInt();
         list.erase(index_del);
         list.print();
-       // list.reverse();
+
+        list.revers(list);
+        list.print();
+
      //  list.print();
      //   list.clear();
 

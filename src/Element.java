@@ -27,4 +27,10 @@ public class Element {
         setNext(Next);
         System.out.println("Econstructor: " + Integer.toHexString(this.hashCode()));
     }
+
+  /*  public Element(Element other) {
+        Data = other.Data;
+        Next = other.Next;
+        System.out.println("CopyConstructor" + Integer.toHexString(hashCode()));
+    }*/
 }
